@@ -1,7 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bl22i0rmu3guf"]
 
 [ext_resource type="Resource" uid="uid://csd5dgnn2qenj" path="res://inventory/player_inventory.tres" id="2_87pht"]
-[ext_resource type="Script" uid="uid://j0eknq61j2ku" path="res://Scripts/Player.gd" id="1_7w11g"]
 [ext_resource type="Texture2D" uid="uid://cybjd4y3bfnjk" path="res://Art/postac.png" id="2_v2ckw"]
 [ext_resource type="PackedScene" uid="uid://ddsqbav6ysoc6" path="res://inventory/inventory_ui.tscn" id="3_87pht"]
 
@@ -11,6 +10,7 @@ script/source = "extends CharacterBody2D
 @export var speed: int = 300
 @export var health: int = 500
 @export var hunger: int = 100
+@export var can_move: bool = true
 @onready var hunger_bar: Node = get_node(\"../UI_Player/HungerBar\")
 @onready var health_bar: Node = get_node(\"../UI_Player/HealthBar\")
 
@@ -51,6 +51,7 @@ size = Vector2(27, 26)
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 4
 script = SubResource("GDScript_lm2ka")
+hunger = 300
 inventory = ExtResource("2_87pht")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -69,10 +70,10 @@ autostart = true
 
 [node name="Inventory_UI" parent="." instance=ExtResource("3_87pht")]
 z_index = 5
-offset_left = -96.0
+offset_left = -256.0
 offset_top = -128.0
-offset_right = 32.0
+offset_right = -128.0
 offset_bottom = -64.0
-scale = Vector2(1.5, 1.5)
+scale = Vector2(4, 4)
 
 [connection signal="timeout" from="HungerTimer" to="." method="_on_hunger_timer_timeout"]
