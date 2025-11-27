@@ -2,11 +2,11 @@ extends CanvasLayer
 
 signal chosen(id: String)
 
-var _ids = []
+var _ids: Array[Variant] = []
 
-@onready var option1 = $Panel/MarginContainer/VBoxContainer/Option1
-@onready var option2 = $Panel/MarginContainer/VBoxContainer/Option2
-@onready var option3 = $Panel/MarginContainer/VBoxContainer/Option3
+@onready var option1: Button = $Panel/MarginContainer/VBoxContainer/Option1
+@onready var option2: Button = $Panel/MarginContainer/VBoxContainer/Option2
+@onready var option3: Button = $Panel/MarginContainer/VBoxContainer/Option3
 
 
 
@@ -26,7 +26,7 @@ func show_options(ids: Array, items: Dictionary):
 	option2.text = _get_label(1, items)
 	option3.text = _get_label(2, items)
 	
-func _get_label(index: int, items: Dictionary):
+func _get_label(index: int, items: Dictionary) -> String:
 	if index >= _ids.size():
 		return "-"
 	var id = _ids[index]

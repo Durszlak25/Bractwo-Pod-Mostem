@@ -1,20 +1,20 @@
 extends Area2D
 
-var rng = RandomNumberGenerator.new()
-var trash_random = RandomNumberGenerator.new()
-var player_in_range = false
-@onready var search_ui = get_node("../UI_Player/SearchUI")
-@onready var bar = search_ui.get_node("searchbar")
-@onready var choice_ui = get_node("../UI_Player/ChoiceUI")
+var rng: RandomNumberGenerator = RandomNumberGenerator.new()
+var trash_random: RandomNumberGenerator = RandomNumberGenerator.new()
+var player_in_range: bool = false
+@onready var search_ui: Node = get_node("../UI_Player/SearchUI")
+@onready var bar: Node = search_ui.get_node("searchbar")
+@onready var choice_ui: Node = get_node("../UI_Player/ChoiceUI")
 
-@export var district = "residential"  
+@export var district: String = "residential"  
 
-var items = {}           
-var loot_pools = {}     
+var items: Dictionary[Variant, Variant] = {}           
+var loot_pools: Dictionary[Variant, Variant] = {}     
 
-var wait_time = 12.0
-var progress = 0.0
-var search_locked = false
+var wait_time: float = 12.0
+var progress: float = 0.0
+var search_locked: bool = false
 
 
 func _process(delta):
@@ -29,10 +29,10 @@ func _process(delta):
 					progress = 100.0
 					search_locked = true
 					
-					var roll = rng.randi_range(1,10)
+					var roll: int = rng.randi_range(1,10)
 					if roll > 4:
 						var pool = loot_pools.get(district, [])
-						var options = pick_unique_weight(pool, 3)
+						var options: Array = pick_unique_weight(pool, 3)
 						if choice_ui:
 							choice_ui.show_options(options, items)
 						print("Propozycje z ", district, ":", options)
@@ -76,8 +76,8 @@ func _reset_search_ui():
 		search_ui.visible = false
 		
 		
-func load_json(path):
-	var file = FileAccess.open(path, FileAccess.READ)
+func load_json(path) -> Dictionary[Variant, Variant]:
+	var file: FileAccess = FileAccess.open(path, FileAccess.READ)
 	if not file: 
 		return {}
 	return JSON.parse_string(file.get_as_text())
@@ -91,7 +91,7 @@ func _ready():
 	items = load_json("res://Data/items.json")
 	loot_pools = load_json("res://Data/loot_pools.json")
 	if typeof(items) == TYPE_ARRAY:
-		var d = {}
+		var d: Dictionary[Variant, Variant] = {}
 		for e in items:
 			if e.has("id"):
 				d[e.id] = e
@@ -105,11 +105,11 @@ func _ready():
 	
 	#funkcja losuje itemy z jsona i zwraca tablice.
 func pick_unique_weight(pool: Array, count: int) -> Array:
-	var bag = []
+	var bag: Array[Variant] = []
 	for e in pool:
 		#e - entry || w - weight
-		var id = String(e.get("id",""))
-		var w = int(e.get("weight", 1))
+		var id: String = String(e.get("id",""))
+		var w: int = int(e.get("weight", 1))
 		if id == "" or w <= 0:
 			continue
 		for i in range(w):
@@ -118,8 +118,8 @@ func pick_unique_weight(pool: Array, count: int) -> Array:
 		return []
 	bag.shuffle()
 	
-	var result = []
-	var seen = {}
+	var result: Array[Variant] = []
+	var seen: Dictionary[Variant, Variant] = {}
 	for id in bag:
 		if not seen.has(id):
 			seen[id] = true
