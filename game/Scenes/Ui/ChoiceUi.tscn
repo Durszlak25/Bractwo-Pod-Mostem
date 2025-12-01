@@ -1,6 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6xy2hbs0hb2c"]
+[gd_scene load_steps=17 format=3 uid="uid://b6xy2hbs0hb2c"]
 
 [ext_resource type="Script" uid="uid://c6q3jpleuocym" path="res://Scripts/ChoiceUi.gd" id="1_erwcg"]
+[ext_resource type="Texture2D" uid="uid://d21ecqnpkh0uv" path="res://Art/background_choice_ui.png" id="2_5k8hh"]
+[ext_resource type="FontFile" uid="uid://bmkc5lpneuknr" path="res://Fonts/PressStart2P-Regular.ttf" id="3_nmuou"]
+[ext_resource type="Texture2D" uid="uid://7gqqvwk17107" path="res://Art/choice_panel_choice_ui.png" id="3_ueik1"]
+[ext_resource type="Texture2D" uid="uid://dyctudqggwrbx" path="res://Art/choice_pane_clickedl_choice_ui.png" id="4_nmuou"]
+[ext_resource type="Texture2D" uid="uid://c3xmblgm1o00s" path="res://Art/choice_pane_pressedl_choice_ui.png" id="5_xt7kd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_owlds"]
+texture = ExtResource("2_5k8hh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dgpxk"]
+texture = ExtResource("3_ueik1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k1lkb"]
+texture = ExtResource("4_nmuou")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xi185"]
+texture = ExtResource("5_xt7kd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5k8hh"]
+texture = ExtResource("3_ueik1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ueik1"]
+texture = ExtResource("4_nmuou")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nmuou"]
+texture = ExtResource("5_xt7kd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xt7kd"]
+texture = ExtResource("3_ueik1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xryye"]
+texture = ExtResource("4_nmuou")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8rhxf"]
+texture = ExtResource("5_xt7kd")
 
 [node name="ChoiceUI" type="CanvasLayer"]
 script = ExtResource("1_erwcg")
@@ -9,6 +44,7 @@ script = ExtResource("1_erwcg")
 custom_minimum_size = Vector2(360, 200)
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_owlds")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel"]
 layout_mode = 0
@@ -26,11 +62,23 @@ theme_override_constants/separation = 12
 [node name="Option1" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 44)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nmuou")
+theme_override_styles/normal = SubResource("StyleBoxTexture_dgpxk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k1lkb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xi185")
 
 [node name="Option2" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 44)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nmuou")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5k8hh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ueik1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nmuou")
 
 [node name="Option3" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 44)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nmuou")
+theme_override_styles/normal = SubResource("StyleBoxTexture_xt7kd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xryye")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8rhxf")

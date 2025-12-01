@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1v4qyhijbdr3"]
+[gd_scene load_steps=4 format=3 uid="uid://d1v4qyhijbdr3"]
 
-[ext_resource type="Texture2D" uid="uid://b324tertuvy1v" path="res://Art/inventory_art/inventory-slot.png" id="1_6n5tk"]
 [ext_resource type="Script" uid="uid://cyhx43k3mavj" path="res://inventory/inventory_ui_slot.gd" id="1_uebyi"]
+[ext_resource type="Texture2D" uid="uid://dblighifhe0k3" path="res://Art/inventory_art/item_slot.png" id="2_uebyi"]
+[ext_resource type="FontFile" uid="uid://bmkc5lpneuknr" path="res://Fonts/PressStart2P-Regular.ttf" id="3_fsjip"]
 
 [node name="inventory_ui_slot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
@@ -11,7 +12,7 @@ offset_bottom = 16.0
 script = ExtResource("1_uebyi")
 
 [node name="background" type="Sprite2D" parent="."]
-texture = ExtResource("1_6n5tk")
+texture = ExtResource("2_uebyi")
 centered = false
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -26,12 +27,14 @@ layout_mode = 2
 [node name="item_display" type="Sprite2D" parent="CenterContainer/Panel"]
 
 [node name="Label" type="Label" parent="CenterContainer/Panel"]
+clip_contents = true
 custom_minimum_size = Vector2(19, 23)
 layout_mode = 0
-offset_left = 1.0000002
-offset_top = 1.0
-offset_right = 20.0
-offset_bottom = 24.0
+offset_left = -1.9999998
+offset_top = 2.0
+offset_right = 30.0
+offset_bottom = 25.0
 scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("3_fsjip")
 text = "99"
 horizontal_alignment = 2

@@ -43,5 +43,3 @@ func _on_option_pressed(index: int):
 
 func _process(_delta):
 	pass
-
-

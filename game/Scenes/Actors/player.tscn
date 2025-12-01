@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bl22i0rmu3guf"]
 
 [ext_resource type="Resource" uid="uid://csd5dgnn2qenj" path="res://inventory/player_inventory.tres" id="2_87pht"]
-[ext_resource type="Texture2D" uid="uid://cybjd4y3bfnjk" path="res://Art/postac.png" id="2_v2ckw"]
+[ext_resource type="Texture2D" uid="uid://dy5xngofujkj5" path="res://Art/postac.png" id="2_v2ckw"]
 [ext_resource type="PackedScene" uid="uid://ddsqbav6ysoc6" path="res://inventory/inventory_ui.tscn" id="3_87pht"]
 
 [sub_resource type="GDScript" id="GDScript_lm2ka"]

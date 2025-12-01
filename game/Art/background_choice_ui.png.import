@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4um8uay632dl"
-path="res://.godot/imported/smietnik.png-153098b5903def13755ec8fff987876e.ctex"
+uid="uid://d21ecqnpkh0uv"
+path="res://.godot/imported/background_choice_ui.png-42a4a61bf76619d12166ce18a56747fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/smietnik.png"
-dest_files=["res://.godot/imported/smietnik.png-153098b5903def13755ec8fff987876e.ctex"]
+source_file="res://Art/background_choice_ui.png"
+dest_files=["res://.godot/imported/background_choice_ui.png-42a4a61bf76619d12166ce18a56747fd.ctex"]
 
 [params]
 

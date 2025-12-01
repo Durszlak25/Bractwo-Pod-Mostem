@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://buoyoquk2poy1"]
+[gd_scene load_steps=2 format=3 uid="uid://buoyoquk2poy1"]
+
+[ext_resource type="FontFile" uid="uid://bmkc5lpneuknr" path="res://Fonts/PressStart2P-Regular.ttf" id="1_hgn0t"]
 
 [node name="SearchUI" type="CanvasLayer"]
 
@@ -12,3 +14,4 @@ offset_top = 20.0
 offset_right = 150.0
 offset_bottom = 47.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_hgn0t")

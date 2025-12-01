@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4um8uay632dl"
-path="res://.godot/imported/smietnik.png-153098b5903def13755ec8fff987876e.ctex"
+uid="uid://dblighifhe0k3"
+path="res://.godot/imported/item_slot.png-416451745c0f320e9f6b36a9bd1fe95c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/smietnik.png"
-dest_files=["res://.godot/imported/smietnik.png-153098b5903def13755ec8fff987876e.ctex"]
+source_file="res://Art/inventory_art/item_slot.png"
+dest_files=["res://.godot/imported/item_slot.png-416451745c0f320e9f6b36a9bd1fe95c.ctex"]
 
 [params]
 
