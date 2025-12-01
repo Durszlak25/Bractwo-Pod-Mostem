@@ -45,6 +45,8 @@ func add_resolutions_to_button():
 	for res_string in RESOLUTIONS:
 		resolution_button.add_item(res_string)
 
+
+#FIXME not changing game window size
 func _on_resolution_selected(index: int):
 	var selected_text = resolution_button.get_item_text(index)
 	var target_size = RESOLUTIONS[selected_text]
