@@ -1,5 +1,4 @@
 extends Control
-
 @onready var start_button = $MainManuButtons/StartButton
 @onready var options_button = $MainManuButtons/OptionsButton
 @onready var quit_button = $MainManuButtons/QuitButton
