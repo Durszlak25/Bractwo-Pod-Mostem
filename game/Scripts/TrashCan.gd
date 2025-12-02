@@ -23,7 +23,10 @@ func _process(delta):
 		if not search_locked:
 			if player_in_range == true && Input.is_action_pressed("interact"):
 				search_ui.visible = true
-				progress += (100.0 / wait_time) * delta
+				if OS.is_debug_build():
+					progress += (100.0 / wait_time) * delta*10
+				else:
+					progress += (100.0 / wait_time) * delta
 				
 				if progress > 100.0:
 					progress = 100.0

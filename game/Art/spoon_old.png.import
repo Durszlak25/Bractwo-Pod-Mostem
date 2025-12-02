@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx3wwcee58gnp"
-path="res://.godot/imported/beer.png-6968edf9afc6155e258cf7249338086f.ctex"
+uid="uid://bt7nqy52cf3lw"
+path="res://.godot/imported/spoon_old.png-0d16dd33570e32170137163635a3341c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/beer.png"
-dest_files=["res://.godot/imported/beer.png-6968edf9afc6155e258cf7249338086f.ctex"]
+source_file="res://Art/spoon_old.png"
+dest_files=["res://.godot/imported/spoon_old.png-0d16dd33570e32170137163635a3341c.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -36,5 +36,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=16
+process/size_limit=0
 detect_3d/compress_to=1
