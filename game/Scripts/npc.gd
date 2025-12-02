@@ -11,15 +11,20 @@ var line_index = 1
 	"Test2",
 	"Cipek bierze w dupe"
 ]
-
+@onready var e_hint = $Ehint
 @export var dialog_ui_path: NodePath
+var e_hint_base_y: float
+var e_hint_time: float = 0.0
 var dialog_ui
 
 
-	
-
 func _ready() -> void:
 	dialog_ui = get_node(dialog_ui_path)
+	if dialog_ui_path != NodePath():
+		dialog_ui = get_node(dialog_ui_path)
+	if e_hint:
+		e_hint_base_y = e_hint.position.y
+		e_hint.visible = false 
 func _process(_delta: float) -> void:
 	#z_index = int(global_position.y)
 	if player_in_range and Input.is_action_just_pressed("interact"):
@@ -28,6 +33,11 @@ func _process(_delta: float) -> void:
 	if talking and Input.is_action_just_pressed("ui_accept"):
 		next_line()
 			
+	if e_hint and e_hint.visible:
+		e_hint_time += _delta
+		var offset = sin(e_hint_time* 3.0) * 4.0
+		e_hint.position.y = e_hint_base_y + offset
+		
 func start_dialog():
 	if dialog_ui == null:
 		return 
@@ -68,6 +78,8 @@ func _on_chat_detecion_body_entered(body: Node2D) -> void:
 		print("wszedl gracz")
 		player_in_range = true
 		player_is = body
+		if e_hint:
+			e_hint.visible = true
 
 
 func _on_chat_detecion_body_exited(body: Node2D) -> void:
@@ -75,4 +87,6 @@ func _on_chat_detecion_body_exited(body: Node2D) -> void:
 			print("wyszedl gracz")
 			player_in_range = false
 			player_is = null
+			if e_hint:
+				e_hint.visible = false
 			end_dialog();

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://prvnkp8swxfc"]
+[gd_scene load_steps=6 format=3 uid="uid://prvnkp8swxfc"]
 
-[ext_resource type="Texture2D" uid="uid://bt0qhyc1ccfmg" path="res://Art/npc.png" id="1_av4sb"]
+[ext_resource type="Texture2D" uid="uid://b10uvsanjjetk" path="res://Art/npc.png" id="1_av4sb"]
 [ext_resource type="Script" uid="uid://bqm7cb37v6q3e" path="res://Scripts/npc.gd" id="1_ton8e"]
+[ext_resource type="Texture2D" uid="uid://c5k8jx4xhd7rf" path="res://Art/e_key.png" id="3_sc8am"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sc8am"]
 size = Vector2(24, 8)
@@ -30,6 +31,10 @@ shape = SubResource("RectangleShape2D_ton8e")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="Ehint" type="Sprite2D" parent="."]
+texture = ExtResource("3_sc8am")
+offset = Vector2(0, -64)
 
 [connection signal="body_entered" from="chat_detecion" to="." method="_on_chat_detecion_body_entered"]
 [connection signal="body_exited" from="chat_detecion" to="." method="_on_chat_detecion_body_exited"]

@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var health_bar: Node = get_node("../UI_Player/HealthBar")
 
 
+
 @export var inventory: Inventory
 
 func get_handle_input():
@@ -46,6 +47,7 @@ func _on_hunger_timer_timeout():
 
 func _ready():
 	print("Grupy gracza:", get_groups())
+	
 
 
 	

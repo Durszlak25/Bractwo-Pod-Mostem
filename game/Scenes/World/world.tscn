@@ -113,6 +113,7 @@ value = 300.0
 show_percentage = false
 
 [node name="SearchUI" parent="YSortLayer/UI_Player" instance=ExtResource("2_j18l1")]
+visible = false
 
 [node name="ChoiceUI" parent="YSortLayer/UI_Player" instance=ExtResource("3_vvk83")]
 
