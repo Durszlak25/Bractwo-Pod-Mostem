@@ -1,0 +1,52 @@
+# Godot 4+ specific ignores
+.godot/
+.nomedia
+
+# Godot-specific ignores
+.import/
+export.cfg
+export_credentials.cfg
+*.tmp
+
+# Crash logs (You don't want to upload your error logs)
+godot_open_stdout
+godot_open_stderr
+
+# Imported translations
+*.translation
+
+# Mono-specific ignores
+.mono/
+data_*/
+mono_crash.*.json
+
+# Visual Studio (If using C#)
+.vs/
+*.user
+*.suo
+*.userprefs
+
+# VS Code
+.vscode/
+# Exception: You might want to keep tasks.json or launch.json, but usually:
+!.vscode/launch.json
+
+# JetBrains (Rider)
+.idea/
+*.sln.iml
+
+# Blender autosaves
+*.blend1
+*.blend2
+*.blend3
+
+# Krita backups
+*.kra~
+
+# Photoshop / GIMP backups
+*.psd.tmp
+*.psb.tmp
+*.xcf~
+
+# Aseprite
+*.aseprite~
