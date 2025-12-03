@@ -31,7 +31,7 @@ This project is currently in the **PRE-RELEASE** phase. The code contained in th
 This game utilizes the modern **Vulkan renderer (Godot 4 Forward+)** to deliver high-fidelity dynamic lighting and atmospheric effects.
 
 **Minimum:**
-* **OS:** Windows 10 (64-bit) / Linux / macOS Big Sur
+* **OS:** Windows 10 (64-bit)
 * **Processor:** Intel Core i3-4150 / AMD FX-4300
 * **Memory:** 4 GB RAM
 * **Graphics:** **Vulkan 1.2** compatible GPU with 2 GB VRAM
